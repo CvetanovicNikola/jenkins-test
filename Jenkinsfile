@@ -27,11 +27,20 @@ pipeline {
                     archiveArtifacts 'target/*.jar'
                     
                     emailext(
-                        subject: "Build Successful: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                        body: "The build was successful.\n\nCheck console: ${env.BUILD_URL}",
-                        to: "cvetanovic.nikola@gmail.com",
-                        from: "cvetanovic.nikola@gmail.com",
-                        replyTo: "cvetanovic.nikola@gmail.com",
+                         to: 'cvetanovic.nikola@gmail.com',
+                        from: 'cvetanovic.nikola@gmail.com',
+                        replyTo: 'cvetanovic.nikola@gmail.com',
+                        subject: "Build Success: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                        body: """\
+                            Hello,
+
+                            The Jenkins build ${env.JOB_NAME} #${env.BUILD_NUMBER} was successful.
+
+                            View the build: ${env.BUILD_URL}
+
+                            Best,
+                            Jenkins
+                            """,
                         mimeType: 'text/plain'
                     )
                 }
