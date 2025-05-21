@@ -39,7 +39,7 @@ pipeline {
                             View the build: ${env.BUILD_URL}
 
                             Best,
-                            Jenkins
+                            Krle
                             """,
                         mimeType: 'text/plain'
                     )
