@@ -31,6 +31,7 @@ pipeline {
                         body: "The build was successful.\n\nCheck console: ${env.BUILD_URL}",
                         to: "cvetanovic.nikola@gmail.com",
                         from: "cvetanovic.nikola@gmail.com",
+                        replyTo: "cvetanovic.nikola@gmail.com",
                         mimeType: 'text/plain'
                     )
                 }
