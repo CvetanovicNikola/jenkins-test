@@ -29,7 +29,8 @@ pipeline {
                     emailext(
                         subject: "Build Successful: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                         body: "The build was successful.\n\nCheck console: ${env.BUILD_URL}",
-                        to: "cvetanovic.nikola@gmail.com"
+                        to: "cvetanovic.nikola@gmail.com",
+                        from: "cvetanovic.nikola@gmail.com"
                     )
                 }
                 failure {
