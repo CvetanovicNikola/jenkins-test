@@ -30,7 +30,8 @@ pipeline {
                         subject: "Build Successful: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                         body: "The build was successful.\n\nCheck console: ${env.BUILD_URL}",
                         to: "cvetanovic.nikola@gmail.com",
-                        from: "cvetanovic.nikola@gmail.com"
+                        from: "cvetanovic.nikola@gmail.com",
+                        mimeType: 'text/plain'
                     )
                 }
                 failure {
